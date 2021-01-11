@@ -1,0 +1,43 @@
+
+
+//- Font Icon -//
+mixin fi(...mods)
+
+    //- settings
+    -
+        var
+            icon = "close"
+            classes = "icon "
+
+    each mod in mods
+        if !isNaN(mod)
+            - classes += "size-"+mod
+        else
+            - classes += " icon-"+mod
+
+    //- html
+    i(class=classes)&attributes(attributes) +
+
+
+//- Svg Icon -//
+mixin si(...mods)
+    svg()&attributes(attributes)
+
+
+//- Links -//
+mixin a(...mods)
+    -
+        var
+            classes = "#"
+            href = "#"
+
+    a(href=href)&attributes(attributes)
+        block
+
+
+//- Buttons -//
+mixin btn(...mods)
+    -
+        var
+            classes = ""
+            href = false
